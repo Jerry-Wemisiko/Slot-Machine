@@ -26,7 +26,7 @@ def deposit():
 
 
 # function to det number of nlines one wants to bet on
-def get_number_lof_lines():
+def get_number_of_lines():
     while True:
         lines = input("Enter the number of lines to bet on 1-" + str(MAX_LINES) + ")?")
 
@@ -44,6 +44,7 @@ def get_number_lof_lines():
 
     return lines
 
+#func for bet amount
 def get_bet():
      while True:
         amount = input("Enter a bet amount? $ ")
@@ -66,7 +67,7 @@ def get_bet():
 
 def main():
  balance = deposit()
- lines = get_number_lof_lines()
+ lines = get_number_of_lines()
  bet = get_bet()
  total_bet = bet * lines
 
