@@ -1,7 +1,24 @@
-#Global constant
+import random #generate random values for slot machines
+
+
+
+
+
+
+#Global constants
 MAX_LINES = 3 
 MAX_BET= 200
 MIN_BET = 50
+
+ROWS = 3
+COLS = 3
+
+symbol_count = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8
+}
 
 
 
@@ -68,10 +85,21 @@ def get_bet():
 def main():
  balance = deposit()
  lines = get_number_of_lines()
- bet = get_bet()
- total_bet = bet * lines
 
- print(f"You are betting ${bet} on {lines} lines. Total bet amount is : ${total_bet}")
+ #checking if amount is within the deposit
+ while True:
+    bet = get_bet()
+    total_bet = bet * lines
+
+    if total_bet > balance :
+        print(
+            f"You do not have enough amount to place bet, your balance is: ${balance} ")
+
+    else:
+        break
+
+ print( 
+    f"You are betting ${bet} on {lines} lines. Total bet amount is : ${total_bet}")
 
  print(balance, lines)
 
