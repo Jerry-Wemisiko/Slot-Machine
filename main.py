@@ -67,9 +67,9 @@ def print_slot_machine(columns):
     for row in range(len(columns[0])):
         for i,column in enumerate (columns):
             if i != len(columns) -1:
-                print(column[row], end ="|")
+                print(column[row], end=" | ")
         else:
-            print(column[row],end="")
+            print(column[row],end=" ")
 
         print()
 
@@ -77,7 +77,14 @@ def print_slot_machine(columns):
 # func to receive depossit for bets
 def deposit():
     while True:
-        amount = input("What would you like to deposit? $")
+        amount = input("What would you like to depo
+slots = get_slot_machine_spin(ROWS,COLS,symbol_count)
+print_slot_machine(slots)
+winnings ,winning_lines = check_winnings(slots,lines,bet,symbol_value)
+print(f"You won{winnings}")
+print(f"You won on lines",*winning_lines)
+return winning_lines - total_bet
+sit? $")
 
         if amount.isdigit():
             amount = int(amount)
@@ -163,12 +170,12 @@ def main():
     balance = deposit()
     while True:
         print (f"Current balance is ${balance}")
-        answer = input("Pree enter to play (q to quit")
+        answer = input("Press enter to play (q to quit ")
         if answer == "q":
             break
-        balance += spin()
+        balance += spin(balance)
 
-    print("tou left with {balance}")    
+    print(f"You left with {balance}")    
  
 
 main()
